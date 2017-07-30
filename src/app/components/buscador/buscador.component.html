@@ -1,0 +1,24 @@
+<div class="card-columns">
+
+    <div class="row" *ngIf="heroes.length == 0">
+        <div class="col-md-12">
+            <div class="alert alert-warning" role="alert">
+                No existen resultados
+            </div>
+        </div>
+    </div>
+
+  <div *ngFor="let heroe of heroes; let i = index" class="card animated fadeIn fast">
+    <img class="card-img-top img-fluid" src="{{ heroe.img }}" alt="{{ heroe.nombre }}">
+    <div class="card-block">
+      <h4 class="card-title">{{heroe.nombre }}</h4>
+      <p class="card-text">Bio: {{heroe.bio }}</p>
+      <p class="card-text"><small class="text-muted">Aparición: {{ heroe.aparicion }}</small></p>
+
+      <button (click)="verHeroe(i+1)" type="button" class="btn btn-outline-primary btn-block">Ver más</button>
+      <!--<a [routerLink]="['/heroes',i+1]" class="btn btn-primary">Ver más</a>-->
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,12 @@
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="{{heroe.img}}" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">{{heroe.nombre | uppercase}}</h4>
+    <p class="card-text">{{heroe.aparicion | date:'dd/MM/yyyy'}}</p>
+    <h4 class="card-title">{{heroe.casa}}</h4>
+    <p class="card-text">{{heroe.bio}}</p>
+    <p *ngIf="heroe.casa === 'Marvel'" class="card-text">Es de marvel</p>
+    <p *ngIf="heroe.casa !== 'Marvel'" class="card-text">Es de DC</p>
+    <a [routerLink] = "['/heroes']" class="btn btn-primary">Regresar</a>
+  </div>
+</div>
